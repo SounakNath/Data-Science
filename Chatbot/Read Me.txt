@@ -1,0 +1,11 @@
+Objective : Create a Chatbot using NLTK & Keras
+
+What is a chatbot? : A chatbot is an artificial intelligence (AI) software that can simulate a conversation (or a chat) with a user in natural language through messaging applications, websites, mobile apps or through the telephone.
+
+Why are chatbots important? : Chatbot applications streamline the interactions between people and services, improving customer experience. At the same time, they offer companies new opportunities to improve the process of customer engagement and operational efficiency by reducing the typical cost of customer service. To be successful, a chatbot solution should be able to perform tasks effectively. Human support plays a key role here, regardless of the type of approach and platform, human intervention is crucial to configure, train and optimize the chatbot system.
+
+How do chatbots work? : There are 2 fundamental classification methods used to run a chatbot.
+
+One option is to create a pattern-matching bot. Pattern-matching bots classify text and produce a response based on the keywords they see. In pattern-matching, the chatbot only knows answers to questions that exist in their models. The bot cannot go beyond the patterns already implemented into its system.
+
+The other crucial methodology for chatbots is to use artificial neural networks. These are solutions that give the bots a way to calculate the response to a question using weighted connections and context in data. With artificial neural networks, each sentence provided to a bot is broken down into different words, and each word is used as an input for the neural network. Over time, the neural network becomes stronger and more advanced, helping the bot to create a more accurate set of responses to common queries.
