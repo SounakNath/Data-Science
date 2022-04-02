@@ -1,0 +1,93 @@
+[33mcommit f10586b63676af2c20ea4546658ea011205ad394[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Sounak Nath <sounak.nath.2018@gmail.com>
+Date:   Sat Apr 2 03:03:37 2022 +0530
+
+    Real Time Sudoku Solver 1st Commit
+
+[1mdiff --git a/Backup Weight/digitRecognition.h5 b/Backup Weight/digitRecognition.h5[m
+[1mnew file mode 100644[m
+[1mindex 0000000..999205f[m
+Binary files /dev/null and b/Backup Weight/digitRecognition.h5 differ
+[1mdiff --git a/CNN Digit Training/.ipynb_checkpoints/digitRecognition-checkpoint.ipynb b/CNN Digit Training/.ipynb_checkpoints/digitRecognition-checkpoint.ipynb[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9d59d9b[m
+[1m--- /dev/null[m
+[1m+++ b/CNN Digit Training/.ipynb_checkpoints/digitRecognition-checkpoint.ipynb[m	
+[36m@@ -0,0 +1,379 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m "cells": [[m
+[32m+[m[32m  {[m
+[32m+[m[32m   "cell_type": "markdown",[m
+[32m+[m[32m   "id": "6e594a6b",[m
+[32m+[m[32m   "metadata": {},[m
+[32m+[m[32m   "source": [[m
+[32m+[m[32m    "#### A CNN model is created and trained on the char54k dataset to identify digits 1 to 9"[m
+[32m+[m[32m   ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m   "cell_type": "markdown",[m
+[32m+[m[32m   "id": "a2a45d00",[m
+[32m+[m[32m   "metadata": {},[m
+[32m+[m[32m   "source": [[m
+[32m+[m[32m    "## Function to calculate the COM shift"[m
+[32m+[m[32m   ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m   "cell_type": "markdown",[m
+[32m+[m[32m   "id": "e687b0f8",[m
+[32m+[m[32m   "metadata": {},[m
+[32m+[m[32m   "source": [[m
+[32m+[m[32m    "This function is used to centralize the image using its center of mass"[m
+[32m+[m[32m   ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m   "cell_type": "code",[m
+[32m+[m[32m   "execution_count": 24,[m
+[32m+[m[32m   "id": "b0e1b629",[m
+[32m+[m[32m   "metadata": {},[m
+[32m+[m[32m   "outputs": [],[m
+[32m+[m[32m   "source": [[m
+[32m+[m[32m    "def getBestShift(img):\n",[m
+[32m+[m[32m    "    cy,cx = ndimage.measurements.center_of_mass(img)\n",[m
+[32m+[m[32m    "    rows,cols = img.shape\n",[m
+[32m+[m[32m    "    shiftx = numpy.round(cols/2.0-cx).astype(int)\n",[m
+[32m+[m[32m    "    shifty = numpy.round(rows/2.0-cy).astype(int)\n",[m
+[32m+[m[32m    "    return shiftx,shifty"[m
+[32m+[m[32m   ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m   "cell_type": "markdown",[m
+[32m+[m[32m   "id": "528f193b",[m
+[32m+[m[32m   "metadata": {},[m
+[32m+[m[32m   "source": [[m
+[32m+[m[32m    "## Function to create training data"[m
+[32m+[m[32m   ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m   "cell_type": "markdown",[m
+[32m+[m[32m   "id": "c175eb33",[m
+[32m+[m[32m   "metadata": {},[m
+[32m+[m[32m   "source": [[m
+[32m+[m[32m    "This function is used to read image traning data from the folders named 1, 2,..., 9 in the DigitImages directory"[m
+[32m+[m[32m   ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m   "cell_type": "code",[m
+[32m+[m[32m   "execution_count": 25,[m
+[32m+[m[32m   "id": "40d099b3",[m
+[32m+[m[32m   "metadata": {},[m
+[32m+[m[32m   "outputs": [],[m
+[32m+[m[32m   "source": [[m
+[32m+[m[32m    "def createTrainingData():\n",[m
+[32m+[m[32m    "    for category in CATEGORIES:\n",[m
+[32m+[m[32m    "        path = os.path.join(DATADIR, category)\n",[m
+[32m+[m[32m    "        class_num = CATEGORIES.index(category)\n",[m
+[32m+[m[32m    "        for img in os.listdir(path):\n",[m
+[32m+[m[32m    "            img_array = cv2.imread(os.path.join(path,img), cv2.IMREAD_GRAYSCALE)\n",[m
+[32m+[m[32m    "            new_array = cv2.resize(img_array, (img_rows, img_cols))\n",[m
+[32m+[m[32m    "            new_array = shiftCenterOfMass(new_array)\n",[m
+[32m+[m[32m    "            training_data.append([new_array, class_num])"[m
+[32m+[m[32m   ][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m   "cell_type": "ma
