@@ -40,9 +40,11 @@ After the application starts, through video capturing, it identifies the Sudoku 
 
 `	`The Convoltional Neural Network(CNN) has been already been trained and the architecture(weights) have been stored in digitRecoginition.h5
 
-**Example**
+**Examples**
 
 ![Real Time Sudoku Solver Example 2](https://user-images.githubusercontent.com/94737291/161420544-6fdc1fbd-9029-48f3-98eb-cc912e0fa2d6.gif)
+![Real Time Sudoku Solver Example 3](https://user-images.githubusercontent.com/94737291/161420770-64dda534-be5e-4211-a4f6-914e205b6f73.gif)
+![Real Time Sudoku Solver Example 1](https://user-images.githubusercontent.com/94737291/161420841-ef354392-9778-4143-a3e5-3d92a94d9656.gif)
 
 **Required Python Modules** :
 
