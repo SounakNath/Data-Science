@@ -1,4 +1,4 @@
-﻿Real Time Sudoku Solver
+﻿**Real Time Sudoku Solver**
 
 This project has been orignally refered from https://github.com/anhminhtran235 and modified as per requirement here.
 
@@ -6,7 +6,7 @@ As the name suggests, the application solves standard Sudoku puzzle in real time
 
 After the application starts, through video capturing, it identifies the Sudoku board, solves the puzzle and writes the solution on board itself.
 
-References :
+**References :**
 
 `	`Data to train the CNN : Chars74K for Computer Fonts http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/
 
@@ -14,7 +14,7 @@ References :
 
 `	`Python coding solutions : https://stackoverflow.com/
 
-How does it work?
+**How does it work?**
 
 `	`Below mentioned python modules are need as a prerequisite.
 
@@ -34,16 +34,17 @@ How does it work?
 
 `	`Then application solves the puzzle and displays the solution on image in real time
 
-How to run?
+**How to run?**
 
 `	`Download all files. Ensure all mentioned python packages are installed. Run MainFile.ipynb
 
-
-
 `	`The Convoltional Neural Network(CNN) has been already been trained and the architecture(weights) have been stored in digitRecoginition.h5
 
+**Example**
 
-Required Python Modules :
+![Real Time Sudoku Solver Example 2](https://user-images.githubusercontent.com/94737291/161420544-6fdc1fbd-9029-48f3-98eb-cc912e0fa2d6.gif)
+
+**Required Python Modules** :
 
 keras [2.8.0]
 
