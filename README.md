@@ -1,7 +1,5 @@
 ﻿# Real Time Sudoku Solver
 
-This project has been orignally refered from https://github.com/anhminhtran235 and modified as per requirement here.
-
 As the name suggests, the application solves standard Sudoku puzzle in real time. The application is based primarily on Image Processing and Machine Learning(CNN).
 
 After the application starts, through video capturing, it identifies the Sudoku board, solves the puzzle and writes the solution on board itself.
@@ -13,6 +11,8 @@ After the application starts, through video capturing, it identifies the Sudoku 
 `	`OpenCV Tutorials : https://www.geeksforgeeks.org/ , https://docs.opencv.org/
 
 `	`Python coding solutions : https://stackoverflow.com/
+
+`	`https://github.com/anhminhtran235
 
 **How does it work?**
 
