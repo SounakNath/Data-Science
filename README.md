@@ -6,39 +6,39 @@ After the application starts, through video capturing, it identifies the Sudoku 
 
 **References :**
 
-`	`Data to train the CNN : Chars74K for Computer Fonts http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/
+  * Data to train the CNN : Chars74K for Computer Fonts http://www.ee.surrey.ac.uk/CVSSP/demos/chars74k/
 
-`	`OpenCV Tutorials : https://www.geeksforgeeks.org/ , https://docs.opencv.org/
+  * OpenCV Tutorials : https://www.geeksforgeeks.org/ , https://docs.opencv.org/
 
-`	`Python coding solutions : https://stackoverflow.com/
+  * Python coding solutions : https://stackoverflow.com/
 
-`	`https://github.com/anhminhtran235
+  * https://github.com/anhminhtran235
 
 **How does it work?**
 
-`	`Below mentioned python modules are need as a prerequisite.
+  * Below mentioned python modules are need as a prerequisite.
 
 
 
-`	`MainFile.ipynb is the entry point of the application.
+  * MainFile.ipynb is the entry point of the application.
 
 
 
-`	`The application converts colored image to gray scale, performs Gaussian blurring and then adaptive thresholding.
+  * The application converts colored image to gray scale, performs Gaussian blurring and then adaptive thresholding.
 
 
 
-`	`Then it finds the contours, gets the biggest contour, get corners, warp image according to perspective transform.
+  * Then it finds the contours, gets the biggest contour, get corners, warp image according to perspective transform.
 
 
 
-`	`Then application solves the puzzle and displays the solution on image in real time
+  * Then application solves the puzzle and displays the solution on image in real time
 
 **How to run?**
 
-`	`Download all files. Ensure all mentioned python packages are installed. Run MainFile.ipynb
+  * Download all files. Ensure all mentioned python packages are installed. Run MainFile.ipynb
 
-`	`The Convoltional Neural Network(CNN) has been already been trained and the architecture(weights) have been stored in digitRecoginition.h5
+  * The Convoltional Neural Network(CNN) has been already been trained and the architecture(weights) have been stored in digitRecoginition.h5
 
 **Examples**
 
