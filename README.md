@@ -1,4 +1,4 @@
-﻿**Real Time Sudoku Solver**
+﻿# Real Time Sudoku Solver
 
 This project has been orignally refered from https://github.com/anhminhtran235 and modified as per requirement here.
 
